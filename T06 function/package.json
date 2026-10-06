@@ -1,0 +1,17 @@
+{
+   "scripts": {
+      "start": "node bill-calculator.js"
+   },
+   "dependencies": {
+      "express": "^5.2.1"
+   },
+   "name": "t04",
+   "version": "1.0.0",
+   "description": "",
+   "main": "bill-calculator.js",
+   "devDependencies": {},
+   "keywords": [],
+   "author": "",
+   "license": "ISC",
+   "type": "commonjs"
+}
