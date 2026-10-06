@@ -1,6 +1,6 @@
 const customerName = "John Doe";
 const productName = "laptop";
-const priceCents = 99999; // price in cents
+const priceCents = 9999; // price in cents
 const isavailable = true;
 
 let quantity = 2; // quantity of the product
@@ -9,21 +9,23 @@ let quantity = 2; // quantity of the product
 const totalPriceCents = priceCents * quantity;
 
 // Convert total price to dollars
-const totalPriceDollars = totalPriceCents / 100;
+const totalPriceDollars = totalPriceCents / 10;
 
 // Function to display the bill
-function displayBill(cName , pName, priceCents, quantity, totalPriceDollars, isavailable) {
+function displayBill(cName , pName, priceCents, quantity, isavailable) {
     console.log(`Customer Name: ${cName}`);
     console.log(`Product Name: ${pName}`);
-    console.log(`Price per unit: $${(priceCents / 100).toFixed(2)}`);
+    console.log(`Price per unit: $${(priceCents / 10).toFixed(2)}`);
     console.log(`Quantity: ${quantity}`);
     console.log(`Total Price: $${totalPriceDollars.toFixed(2)}`);
     console.log(`Availability: ${isavailable ? "In Stock" : "Out of Stock"}`);
 }
 
 // Call the function to display the bill
-displayBill("Mohit", "laptop", 5648, 2, 199.998, true);
-displayBill("rohit", "laptop", 564, 5, 19.998, false);
+displayBill("Mohit", "laptop", 56000, 2,  true);
+console.log("--------------------------------------------------");
+// second call to displayBill function with different parameters
+displayBill("rohit", "laptop", 56402, 5, false);
 
 function parsequantity(quantityText) {
     if ( quantityText.trim() === "") {
@@ -71,3 +73,14 @@ function calculateRewardPoints(totalPriceDollars) {
 const rewardPoints = calculateRewardPoints(totalPriceDollars);
 console.log(`Reward Points Earned: ${rewardPoints}`);
 
+function applyDiscount(totalPriceDollars, discountPercentage) {
+    if (discountPercentage < 0 || discountPercentage > 100) {
+        console.log("Invalid discount percentage. It must be between 0 and 100.");
+        return totalPriceDollars;
+    }
+    const discountAmount = (totalPriceDollars * discountPercentage) / 100;
+    return totalPriceDollars - discountAmount;
+}
+
+const discountedPrice = applyDiscount(totalPriceDollars, 15); // Applying a 15% discount
+console.log(`Discounted Price after 5% discount: $${discountedPrice.toFixed(2)}`);
