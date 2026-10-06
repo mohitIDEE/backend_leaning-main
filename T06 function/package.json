@@ -9,9 +9,9 @@
    "version": "1.0.0",
    "description": "",
    "main": "bill-calculator.js",
-   "devDependencies": {},
    "keywords": [],
    "author": "",
    "license": "ISC",
-   "type": "commonjs"
+   "type": "commonjs",
+   "devDependencies": {}
 }
